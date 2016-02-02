@@ -14,13 +14,30 @@ public class PlayerController : MonoBehaviour
 	public float speed;
 	public float tilt;
 	public Boundary boundary;
+
+	public GameObject shot;
+	public GameObject shotSpawn; 
+	public float fireRate;
+
+	private float nextFire;
 	
 	void Start()
 	{
 		rb = GetComponent<Rigidbody> ();
 	}
-	
-	
+
+	void Update () 
+	{
+		if (Input.GetButton("Fire1") && Time.time > nextFire) 
+		{
+			shot = Instantiate(shot) as GameObject;
+			nextFire = Time.time + fireRate;
+			//GameObject clone = 
+			shot.transform.position = shotSpawn.transform.position;
+
+		}
+	}
+		
 	void FixedUpdate() 
 	{
 		float mH = Input.GetAxis ("Horizontal");  
