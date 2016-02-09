@@ -5,6 +5,7 @@ public class DestroyByContact : MonoBehaviour {
 
 	public GameObject explosion;
 	public GameObject playerExplosion;
+	public int scoreValue;
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Boundary") {
@@ -16,6 +17,7 @@ public class DestroyByContact : MonoBehaviour {
 
 			Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 		}
+		GameController.AddScore (scoreValue);
 		Destroy (other.gameObject);
 		Destroy (gameObject);
 	}
