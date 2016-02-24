@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class jump : MonoBehaviour {
-	public float up;
+	public float speed;
 	private  Rigidbody rb;
 	
 	void Start ()
@@ -14,7 +14,7 @@ public class jump : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		if (Input.GetKey (KeyCode.A)) {
-			rb.AddForce (Vector3.up * up);
+			rb.AddForce (Vector3.up * speed);
 		}
 	}
 }
