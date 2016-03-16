@@ -11,10 +11,10 @@ public class jump : MonoBehaviour {
 		
 	}
 	
-	void FixedUpdate ()
+	public void up ()
 	{
-		if (Input.GetKey (KeyCode.A)) {
-			rb.AddForce (Vector3.up * speed);
-		}
+
+			rb.velocity = (Vector3.up * speed);
+	
 	}
 }
