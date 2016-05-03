@@ -2,12 +2,11 @@
 using System.Collections;
 
 public class Controller : MonoBehaviour {
+	public float speed;
 
-	private Rigidbody rb;
 
 	void Start () {
-		rb = GetComponent<Rigidbody>();
-		rb.velocity = Vector3.right*2;
+		GetComponent<Rigidbody> ().velocity = transform.right * speed;
 	
 
 	}
